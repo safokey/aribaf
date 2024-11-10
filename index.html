@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlubApp - McDonald's</title>
+    <link rel="stylesheet" href="klub.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <h1>KLUB</h1>
+            <h2>LA ROCHELLE</h2>
+        </div>
+        <div class="notification-icon">
+            🔔
+        </div>
+    </header>
+
+    <!-- Liste des établissements -->
+    <div class="establishments" id="establishment-list"></div>
+
+    <!-- Modale des détails -->
+    <div class="establishment-details" id="details-modal">
+        <div>
+            <button id="close-details" class="btnf">⬅️</button>
+            <button id="toggle-favorite" class="btnc">❤️</button>
+        </div>
+        <div class="container">
+            <img src="menu acheter menu offert.jpeg" alt="ariba" class="cropped-image">
+            <img src="logomacdo.jpeg" alt="ariba" class="imagemacdo">
+        </div>
+        <div id="details-content" class="boxd">
+            <p style="font-size: 10px; color: grey;">RESTAURANTS</p>
+            <h2 id="establishment-name"></h2>
+            <p id="establishment-description"></p>
+            <P style="color: #ff237f;">OFFRE PONCTUELLE</P>
+            <div class="offer">
+                <h3 id="offer-title"></h3>
+                <p style="font-size: 0.7rem;" id="offer-description"></p>
+            </div>
+            <button class="use-offer-button" onclick="confirmUseOffer()">UTILISER CETTE OFFRE</button>
+            <p style="color: #00a0fd;">OFFRE PERMANENTE</p>
+            <div class="offer2">
+                <p>-20% sur l'addition OU un sandwich offert pour l'achat d'un menu best-of(ou Maxi)</p>
+            </div>
+            <button class="show-card" onclick="showCard()">MONTRER MA CARTE</button>
+        </div>
+    </div>
+
+    <!-- Modale pour afficher la carte -->
+    <div id="cardModal" class="card-modal" style="display: none;">
+        <div class="card-content">
+            <span class="close-btn" onclick="closeCard()">&times;</span>
+            <img src="https://via.placeholder.com/300x400" alt="Votre carte" class="card-image">
+        </div>
+    </div>
+
+    <!-- Overlay de confirmation -->
+    <div id="confirmationOverlay" class="overlay" style="display: none;">
+        <div class="confirmation-box">
+            <img src="pngwing.com.png" class="croixbail" onclick="cancelOffer()">
+            <p>Es-tu sûr de vouloir utiliser<br> cette offre ?</p>
+            <p>Assure-toi d'être à côté d'un<br> membre du staff de l'établissement.<br>Une fois valider, cette offre ne sera<br> plus disponible.</p>
+            <button class="bouton-oui" onclick="confirmOffer()">Oui</button>
+            <button class="bouton-non" onclick="cancelOffer()">Non</button>
+        </div>
+    </div>
+
+    <script src="kclubia.js"></script>
+</body>
+</html>
